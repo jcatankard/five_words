@@ -81,3 +81,11 @@ so this favours a breadth-first (with aggressive pruning) rather a more iterativ
 
 Finally, before saving results,
 we look up the anagrams that we removed at the beginning to end up with a complete set of solutions
+
+### Go
+As an exercise I decided to build a solution using Go. The approach is very similar with the following differences:
+ - no Numpy library so all array operations are made from scratch
+ - instead of creating two iterations - one starting with 'q' words and the other 'x' words, we iterate through the alphabet and remove one letter at a time, and all words that contain that letter. Each solution must then fully utilise the remaining 25 letters. This was slightly neater to code but marginally less efficient for the given problem.
+ - this solution takes advantage of Go's concurrency which provides a marginal speed-up
+ 
+ This version takes approx: 0.3 seconds to find all solutions.
